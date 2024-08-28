@@ -1,0 +1,1 @@
+SELECT w.wellname as well_name, INITCAP(a.rigname) as rig_name, a.wvwbname as wellbore_name, INITCAP(a.contractor) as contractor, w.operator as operator FROM wv.wvwellheader w INNER JOIN dwh.factwvactivity a ON a.idwell=w.idwell  WHERE a.npd_wellbore = {{appsmith.store.selectedWellbore || this.params.npd_wellbore}} LIMIT 1

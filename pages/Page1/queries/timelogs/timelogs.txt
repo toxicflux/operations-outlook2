@@ -1,0 +1,5 @@
+SELECT fd.forecast24hrs, fd.sum24hrs, a.npd_wellbore, a.activitystart, a.activityend, a.duration*24 as duration, a.code1 as phase, a.code2 as opr, a.code3 as act, a.unschedtyp as plan, a.com as operation_description  FROM dwh.factwvactivity a
+LEFT JOIN dwh.factDrillingDaily fd ON fd.npd_wellbore = a.npd_wellbore AND fd.cutoffdate = a.cutoffdate
+WHERE  a.rls_sensitivity <= {{main.getRlsSensitivity()}} 
+AND a.npd_wellbore = {{appsmith.store.selectedWellbore || this.params.npd_wellbore}}
+AND a.cutoffdate={{this.params.cutoffdate}} ORDER BY a.activitystart

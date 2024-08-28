@@ -1,0 +1,32 @@
+with cte1 as (
+	SELECT 
+a.npd_wellbore,
+a.activitystart,
+a.activityend,
+a.duration,
+a.unschedtyp,
+a.depthend,
+a.classification,
+a.remarks,
+a.com,
+a.idrec,
+a.idwell,
+a.idrecwellbore,
+a.cutoffdate,
+a.npt_contractor,
+row_number() over (partition by idwell) as rn
+FROM dwh.factwvactivity a
+	where a.rls_sensitivity <= {{JSObject1.getRlsSensitivity()}} AND cutoffdate>TO_DATE({{start_date.selectedDate}}, 'YYYY-MM-DD') AND cutoffdate<=TO_DATE({{end_date.selectedDate}}, 'YYYY-MM-DD')
+),
+
+cte2 as (
+	select a.*, coalesce(w.wellbore, concat(wh.wellname,' (',wlb.des,')')) as wellbore
+	from cte1 a
+left join dwh.dimwellbore w on a.npd_wellbore=w.npd_wellbore 
+left join wv.wvwellheader wh on a.idwell = wh.idwell 
+left join wv.wvwellbore wlb on a.idrecwellbore = wlb.idrec 
+WHERE a.npd_wellbore = ANY({{this.params.wellbores}})
+)
+
+select * from cte2 c
+order by activitystart desc;

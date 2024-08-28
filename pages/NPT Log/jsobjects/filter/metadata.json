@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "66cf0d36fe2d9c733c8c472f_2518e2b9-d316-4030-a991-0664a631ff50",
+  "id": "NPT Log_filter",
+  "unpublishedCollection": {
+    "name": "filter",
+    "pageId": "NPT Log",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "page",
+        "value": "\"OO_ws\""
+      }
+    ]
+  }
+}

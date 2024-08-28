@@ -1,0 +1,37 @@
+with cte1 as (
+	SELECT 
+a.npd_wellbore,
+a.activitystart,
+a.activityend,
+a.duration,
+a.unschedtyp,
+a.depthend,
+a.classification,
+a.remarks,
+a.com,
+a.idrec,
+a.idwell,
+a.idrecwellbore,
+a.cutoffdate,
+a.npt_contractor,
+row_number() over (partition by idwell) as rn
+FROM dwh.factwvactivity a
+	where a.rls_sensitivity <= {{JSObject1.getRlsSensitivity()}} AND cutoffdate>=TO_DATE('{{ moment().subtract(Number(appsmith.store.intervalDays - 1) || 6, 'day').format()}}', 'YYYY-MM-DD')
+),
+
+cte2 as (
+	select a.*, coalesce(w.wellbore, concat(wh.wellname,' (',wlb.des,')')) as wellbore,
+					json_agg(json_build_object('name',coalesce(w.wellbore, concat(wh.wellname,' (',wlb.des,')')),'code',a.idwell )) FILTER (WHERE rn = 1) over ()  as wbfilter
+	from cte1 a
+left join dwh.dimwellbore w on a.npd_wellbore=w.npd_wellbore 
+left join wv.wvwellheader wh on a.idwell = wh.idwell 
+left join wv.wvwellbore wlb on a.idrecwellbore = wlb.idrec 
+WHERE a.npd_wellbore = {{appsmith.store.selectedWellbore || this.params.npd_wellbore}}
+)
+
+
+select npt_contractor as value, npt_contractor as label from cte2 c
+WHERE npt_contractor is not null
+GROUP BY npt_contractor
+ORDER BY npt_contractor
+;

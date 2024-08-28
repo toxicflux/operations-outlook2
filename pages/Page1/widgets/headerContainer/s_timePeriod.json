@@ -1,0 +1,78 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "0px",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( main.selectedInterval()))(s_timePeriod.options, s_timePeriod.serverSideFiltering) }}",
+  "displayName": "Select",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "defaultOptionValue"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    },
+    {
+      "key": "onDropdownClose"
+    }
+  ],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.a7b19dc8b31d68fcff57f1d2c0084a18.svg",
+  "isDeprecated": false,
+  "isDisabled": false,
+  "isFilterable": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "k43e7iwa6a",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Days",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "3",
+  "leftColumn": 18,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 6,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 0,
+  "onDropdownClose": "{{main.changeDateInterval(s_timePeriod.selectedOptionValue);\nfilter.saveFilters('date_interval', s_timePeriod.selectedOptionValue);}}",
+  "onOptionChange": "",
+  "optionLabel": "name",
+  "optionValue": "code",
+  "parentColumnSpace": 16.328125,
+  "parentId": "bzn9theugt",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "searchTags": [
+    "dropdown"
+  ],
+  "serverSideFiltering": false,
+  "sourceData": "[\n\t{\n    \"name\": \"Last 24 hours\",\n    \"code\": \"last_24_hours\"\n  },\n\t {\n    \"name\": \"Last 3 days\",\n    \"code\": \"last_3_days\"\n  },\n  {\n    \"name\": \"Last 7 days\",\n    \"code\": \"last_7_days\"\n  },\n  {\n    \"name\": \"Last month\",\n    \"code\": \"last_month\"\n  },\n\t{\n    \"name\": \"Last 3 months\",\n    \"code\": \"last_3_months\"\n  },\n\t{\n\t  \"name\": \"Custom\",\n\t\t\"code\": \"custom\"\n\t}\n]",
+  "tags": [
+    "Suggested",
+    "Select"
+  ],
+  "topRow": 0,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "35ay7xkuga",
+  "widgetName": "s_timePeriod"
+}

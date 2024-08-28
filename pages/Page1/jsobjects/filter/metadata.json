@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "66cf0d36fe2d9c733c8c472f_14d2e8da-f057-467e-b868-34911c16eb1e",
+  "id": "Page1_filter",
+  "unpublishedCollection": {
+    "name": "filter",
+    "pageId": "Page1",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "page",
+        "value": "\"OO_tl\""
+      }
+    ]
+  }
+}

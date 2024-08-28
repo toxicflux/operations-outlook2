@@ -1,0 +1,4 @@
+SELECT a.npd_wellbore, a.cutoffDate, a.activitystart, a.activityend, a.duration*24 as duration, sum(a.duration*24) over(ORDER BY a.activitystart) as cum_duration, a.code1 as phase, a.code2 as opr, a.code3 as act, a.unschedtyp as plan, a.com as operation_description FROM dwh.factwvactivity a WHERE  a.rls_sensitivity <= {{main.getRlsSensitivity()}} 
+AND a.npd_wellbore = {{appsmith.store.selectedWellbore || this.params.npd_wellbore}}
+AND a.activitystartcet>={{ appsmith.store.fromDate || moment().subtract(2, 'days').format()}}
+																																								 
