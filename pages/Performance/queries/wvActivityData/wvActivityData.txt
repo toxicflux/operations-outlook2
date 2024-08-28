@@ -1,0 +1,4 @@
+with cte1 as (SELECT sum(duration) as duration_days, classification
+	FROM dwh."factwvactivity" f WHERE f.rls_sensitivity <= {{main.getRlsSensitivity()}} AND f.npd_wellbore = {{ this.params.npd_wellbore || appsmith.URL.queryParams.npd_wellbore|| appsmith.store.selectedWellbore }} GROUP BY classification
+							)
+select * from cte1 

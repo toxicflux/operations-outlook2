@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0px",
+  "bottomRow": 22,
+  "boxShadow": "none",
+  "buttonColor": "#16a34a",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "displayName": "Button",
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.05d209fafeb13a8569e3b4e97069d9ee.svg",
+  "isDefaultClickDisabled": true,
+  "isDeprecated": false,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "rvmdkonly6",
+  "leftColumn": 31,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 30,
+  "mobileRightColumn": 46,
+  "mobileTopRow": 18,
+  "onClick": "{{closeModal('noDataModal');}}",
+  "originalBottomRow": 22,
+  "originalTopRow": 18,
+  "parentColumnSpace": 6.9375,
+  "parentId": "mf8vlycoqv",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 47,
+  "searchTags": [
+    "click",
+    "submit"
+  ],
+  "tags": [
+    "Buttons"
+  ],
+  "text": "Cancel",
+  "topRow": 18,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "31u21rf45u",
+  "widgetName": "noDataCancelBtn"
+}

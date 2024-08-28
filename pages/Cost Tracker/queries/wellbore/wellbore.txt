@@ -1,0 +1,1 @@
+SELECT wellbore, npd_Wellbore FROM dwh.dimwellbore where rls_sensitivity <= {{main.getRlsSensitivity()}} AND npd_wellbore = {{ this.params.npd_wellbore || appsmith.URL.queryParams.npd_wellbore|| appsmith.store.selectedWellbore }} 

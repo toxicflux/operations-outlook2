@@ -1,0 +1,47 @@
+{
+  "animateLoading": true,
+  "borderOpacity": 100,
+  "borderRadius": "0px",
+  "borderWidth": "0",
+  "bottomRow": 67,
+  "boxShadow": "none",
+  "displayName": "Iframe",
+  "dynamicBindingPathList": [
+    {
+      "key": "source"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.a84667dbdc548d14f7c83df551151550.svg",
+  "isDeprecated": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "0sb16y6h9l",
+  "leftColumn": 0,
+  "mobileBottomRow": 36,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 13,
+  "mobileTopRow": 4,
+  "originalBottomRow": 68,
+  "originalTopRow": 5,
+  "parentColumnSpace": 12.9541015625,
+  "parentId": "p01cnws4c9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchTags": [
+    "embed"
+  ],
+  "source": "{{appsmith.store.frontend_components_url}}/DiscriminateNptWellViewChart#{ \"isLoading\": {{typeof discriminateNptWvData.data === 'undefined'}}, \"height\": 600, \"parse\": {\n\"data\": \"{{npt_breakdown.isSwitchedOn? main.getDiscriminateNptData(discriminateNptWvData.data): main.getDiscriminateNptDataUnfiltered(discriminateNptWvData.data)}}\"}}",
+  "tags": [
+    "Display"
+  ],
+  "topRow": 4,
+  "type": "IFRAME_WIDGET",
+  "version": 1,
+  "widgetId": "tjk3nsb575",
+  "widgetName": "discriminateNptWvChartFrame"
+}

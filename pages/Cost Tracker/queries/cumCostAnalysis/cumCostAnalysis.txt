@@ -1,0 +1,31 @@
+with cte as (SELECT  dp.name, k.taskname, dp.afe_cost as total_cost, (k.durestimate/24) as dsv_time, sum(f.planned_total_phase_duration) / count(f.planned_total_phase_duration) as planned_time, (k.duractual/24) as actual_time, (( k.duractual -  sum(f.planned_total_phase_duration) / count(f.planned_total_phase_duration))) as delta_days, dp.afe_cost*count(f.planned_total_phase_duration) / sum(f.planned_total_phase_duration) as pre_vowd, ((sum(f.daily_cost)*count(f.planned_total_phase_duration) / sum(f.planned_total_phase_duration) ) * (k.duractual/24)) - sum(f.daily_cost) as delta_cost, MIN(k.fromdate) as kabal_start, MAX(k.phaseenddate) as kabal_end, (k.durestimate/24) as estimate_time FROM dwh."factcostanalysis" f LEFT JOIN  input."mapping_kabaliqxphases" as mk ON mk.u_phase_id = f.u_phase_id LEFT JOIN dwh.dimkabalphases as k ON k.portplantaskid = mk.portplantaskid LEFT JOIN dwh.dimphases as dp ON dp.u_phase_id = mk.u_phase_id WHERE k.rls_sensitivity <= {{main.getRlsSensitivity()}} AND f.npd_wellbore = {{ this.params.npd_wellbore || appsmith.URL.queryParams.npd_wellbore || appsmith.store.selectedWellbore }} GROUP BY dp.name, dp.afe_cost, k.taskname, k.duractual, k.durestimate ORDER BY MAX(k.fromdate)),
+
+cte2 as (
+	SELECT string_agg(c.taskname, ' / ')  as taskname, sum(c.dsv_time) as dsv_time, CASE 
+    WHEN NOW() :: TIMESTAMP > MIN(c.kabal_start)  AND  NOW() ::TIMESTAMP <= MAX(c.kabal_end)  THEN sum(c.dsv_time)
+    ELSE sum(c.actual_time)
+  END AS actual_time, sum(c.planned_time)/count(c.planned_time) as planned_time, sum(c.total_cost)/count(c.total_cost) as total_cost, (sum(c.pre_vowd)*sum(c.actual_time)/count(c.actual_time)) as total_vowd, MIN(c.kabal_start) as kabal_start, MAX(c.kabal_end) as kabal_end, 
+CASE 
+    WHEN NOW() :: TIMESTAMP > MIN(c.kabal_start)  AND NOW() :: TIMESTAMP <= MAX(c.kabal_end) 
+		THEN sum(c.dsv_time) - (sum(c.planned_time)/count(c.planned_time))
+    ELSE sum(c.actual_time) - (sum(c.planned_time)/count(c.planned_time))
+  END AS delta_days,
+	(sum(c.pre_vowd)*sum(c.actual_time)/count(c.actual_time)) - sum(c.total_cost)/count(c.total_cost) as delta_cost, 
+	CASE 
+    WHEN sum(c.actual_time) >= 0 THEN (sum(c.pre_vowd) * sum(c.actual_time)) /count(c.actual_time) 
+    ELSE sum(c.total_cost)/count(c.total_cost) 
+  END AS predictive_cost,
+	CASE 
+	 WHEN sum(c.actual_time) >= 0  THEN (sum(c.pre_vowd) * sum(c.actual_time)) /count(c.actual_time) 
+	 ELSE (sum(c.pre_vowd)*sum(c.estimate_time))/count(c.estimate_time)  
+	END AS dsv_cost
+FROM cte c GROUP BY c.name ORDER BY MAX(kabal_start))
+
+SELECT CASE 
+							WHEN c.actual_time is not NULL AND c.actual_time >= 0 THEN FALSE
+							ELSE TRUE
+							END AS is_prediction, sum(
+							CASE WHEN c.actual_time is not NULL AND c.actual_time >= 0 THEN c.actual_time
+								ELSE c.dsv_time
+								END
+							) over (ORDER BY c.kabal_start) as cum_duration, SUM(c.actual_time) over (ORDER BY c.kabal_start) as cum_actual, SUM(c.dsv_time) over (ORDER BY c.kabal_start) as cum_dsv, sum(c.planned_time) over (ORDER BY c.kabal_start) as cum_planned_duration, sum(c.total_cost) over (ORDER BY c.kabal_start) as cum_afe_cost, sum(c.dsv_cost) over (ORDER BY c.kabal_start) as cum_dsv_cost FROM cte2 c

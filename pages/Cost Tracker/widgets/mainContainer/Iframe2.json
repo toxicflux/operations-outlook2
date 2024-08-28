@@ -1,0 +1,51 @@
+{
+  "animateLoading": true,
+  "borderColor": "{{appsmith.theme.colors.backgroundColor}}",
+  "borderOpacity": 100,
+  "borderRadius": "0px",
+  "borderWidth": "0",
+  "bottomRow": 62,
+  "boxShadow": "none",
+  "displayName": "Iframe",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderColor"
+    },
+    {
+      "key": "srcDoc"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.a84667dbdc548d14f7c83df551151550.svg",
+  "isDeprecated": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "c0mdcq358n",
+  "leftColumn": 0,
+  "mobileBottomRow": 69,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 37,
+  "originalBottomRow": 62,
+  "originalTopRow": 5,
+  "parentColumnSpace": 18.60595703125,
+  "parentId": "esu0145mku",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchTags": [
+    "embed"
+  ],
+  "source": "",
+  "srcDoc": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Ag-Grid Basic Example</title>\n  <script src=\"https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js\"></script>\n\t<style>\n\t/* width */\n::-webkit-scrollbar {\n  width: 10px;\n}\n\n/* Track */\n::-webkit-scrollbar-track {\n  background: #f1f1f1; \n}\n\n/* Handle */\n::-webkit-scrollbar-thumb {\n  background: #888; \n}\n\n/* Handle on hover */\n::-webkit-scrollbar-thumb:hover {\n  background: #555; \n}\n\t</style>\n  <script>\n\t\tconst data = JSON.parse(\"{{calc.mapToComparativeAnalysis.data.tableData}}\");\nconst columnDefs = data.columnDefs.map((column) => {\n\treturn {\n  \t...column,\n\t\t valueFormatter: params => {\n        if(typeof params.value === 'number' && ['planned', 'est_VoWD', 'delta_cost', \"predictive_cost\", \"dsv_cost\"].includes(params.column.colId)){\n        \t\tconst currency = new Intl.NumberFormat('nb-NO', {\n\t\t\t\t\t\tstyle: 'currency',\n\t\t\t\t\t\tcurrency: 'NOK',\n\t\t\t\t\t});\n\n        \treturn currency.format(params.value.toFixed(2))\n        }\n\n\t\t\t\tif(typeof params.value === 'number'  && ['est_VoWD', 'planned_time', 'dsv_time', 'actual_time'].includes(params.column.colId)){\n\t\t\t\t\treturn params.value.toFixed(2)\n\t\t\t\t}\n\n\n\t\t\t\tif(typeof params.value === 'number'  && ['delta_days'].includes(params.column.colId)){\n\t\t\t\t\treturn params.value >= 0? '+' +   params.value.toFixed(2): params.value.toFixed(2)\n\t\t\t\t}\n\n     },\n       cellStyle: params => {\n        const index = data.rowData.findIndex((x) =>  x.name !== \"\" && x.actual_time === null)\n       \t\tconst customStyle = {};\n        \tif(params.column.colId === \"delta_days\" && (params.rowIndex === data.rowData.length -1 ||  params.rowIndex === index-1)){\n          \tif(params.value < 0){\n\n\ncustomStyle[\"color\"] = \"#16a34a\";\n            }\n\n            if(params.value > 0){\n            \t\t  customStyle[\"color\"] = \"#e15615\";\n            }\n          }\n\n       \t\tif(params.rowIndex === data.rowData.length -1 || params.rowIndex === index-1){\n          \t \tcustomStyle[\"fontWeight\"] = \"bold\";\t\t\n          }\n\n          return customStyle;\n       }\n    }\n})\n\n\nvar gridOptions = {\nenableBrowserTooltips: true,\n  columnDefs: columnDefs,\n\tdefaultColDef: {\n    resizable: true,\n\t\tsuppressMovable : true\n  },\n getRowStyle: params => {\n   \t\t\t const index = data.rowData.findIndex((x) =>  x.name !== \"\" && x.actual_time === null)\n        if (params.node.rowIndex === data.rowData.length - 2 || params.node.rowIndex === index - 2 || params.node.rowIndex === index - 1 )  {\n            return { 'border-bottom': '1px solid #A4A7A9' };\n        }\n    },\n  rowData: data.rowData,\n\tonFirstDataRendered: onFirstDataRendered,\n\n};\n\nfunction onFirstDataRendered(params) {\n\n}\n\ndocument.addEventListener('DOMContentLoaded', function() {\n    var gridDiv = document.querySelector('#myGrid');\n    new agGrid.Grid(gridDiv, gridOptions);\n});\n\n  </script>\n</head>\n<body>\n  <div id=\"myGrid\" style=\"height: 525px; width: 100%;\" class=\"ag-theme-alpine\"></div>\n</body>\n</html>",
+  "tags": [
+    "Display"
+  ],
+  "topRow": 5,
+  "type": "IFRAME_WIDGET",
+  "version": 1,
+  "widgetId": "1w9jz5gmga",
+  "widgetName": "Iframe2"
+}

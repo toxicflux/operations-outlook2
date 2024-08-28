@@ -19,6 +19,14 @@
     {
       "id": "Wellbore",
       "isDefault": false
+    },
+    {
+      "id": "Cost Tracker",
+      "isDefault": false
+    },
+    {
+      "id": "Performance",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {

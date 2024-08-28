@@ -1,0 +1,6 @@
+with cte1 as (SELECT npt_contractor, npt_service, npd_wellbore, classification, ref_portplantaskid_phase, sum(duration*24) sumdur FROM dwh.factwvactivity WHERE rls_sensitivity <= {{main.getRlsSensitivity()}} group by classification, ref_portplantaskid_phase, npd_wellbore, npt_contractor, npt_service )
+
+select k.taskname as name, avg(dp.afe_hours) as afe_hours, json_agg(jsonb_build_object(c.classification, c.sumdur, 'npt_contractor_text', c.npt_contractor, 'npt_service_text', c.npt_service)) as npt_data from cte1 c LEFT JOIN input.mapping_kabaliqxphases m ON c.ref_portplantaskid_phase = m.portplantaskid LEFT JOIN dwh."dimphases" dp ON m.u_phase_id = dp.u_phase_id LEFT JOIN dwh.dimkabalphases as k ON k.portplantaskid = m.portplantaskid 
+ WHERE m.portplantaskid is not NULL AND c.npd_wellbore =  {{ this.params.npd_wellbore || appsmith.URL.queryParams.npd_wellbore|| appsmith.store.selectedWellbore }}
+ GROUP BY k.taskname, c.npd_wellbore
+ ORDER BY  MIN(k.fromdate)

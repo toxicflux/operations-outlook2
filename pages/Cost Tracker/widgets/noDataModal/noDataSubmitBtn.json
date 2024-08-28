@@ -1,0 +1,56 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0px",
+  "bottomRow": 22,
+  "boxShadow": "none",
+  "buttonColor": "#16a34a",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "displayName": "Button",
+  "dynamicBindingPathList": [],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "hideCard": false,
+  "iconAlign": "left",
+  "iconSVG": "/static/media/icon.05d209fafeb13a8569e3b4e97069d9ee.svg",
+  "isDefaultClickDisabled": true,
+  "isDeprecated": false,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "rvmdkonly6",
+  "leftColumn": 47,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "onClick": "{{navigateTo('mailto:6b77276c.varenergi.onmicrosoft.com@no.teams.ms?subject=Missing Data - Operation Outlook - Cost Tracker&body=Hi%0D%0A%0D%0AiQx data is missing for wellbore with npd wellbore id ' + appsmith.store.selectedWellbore + '.%0D%0A%0D%0ABest regards,%0D%0A%0D%0A' + appsmith.user.userClaims.name + '%0D%0A', {}, 'SAME_WINDOW');}}",
+  "originalBottomRow": 22,
+  "originalTopRow": 18,
+  "parentId": "4aei8r9rv0",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "searchTags": [
+    "click",
+    "submit"
+  ],
+  "tags": [
+    "Buttons"
+  ],
+  "text": "Send email",
+  "topRow": 18,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "w44z3k5ip2",
+  "widgetName": "noDataSubmitBtn"
+}

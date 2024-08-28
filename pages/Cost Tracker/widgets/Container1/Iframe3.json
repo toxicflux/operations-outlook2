@@ -1,0 +1,47 @@
+{
+  "animateLoading": true,
+  "borderOpacity": 100,
+  "borderRadius": "0px",
+  "borderWidth": "0",
+  "bottomRow": 51,
+  "boxShadow": "none",
+  "displayName": "Iframe",
+  "dynamicBindingPathList": [
+    {
+      "key": "source"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.a84667dbdc548d14f7c83df551151550.svg",
+  "isDeprecated": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "5ncypkcbtt",
+  "leftColumn": 0,
+  "mobileBottomRow": 36,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 4,
+  "originalBottomRow": 52,
+  "originalTopRow": 5,
+  "parentColumnSpace": 19.015625,
+  "parentId": "mpzf3l5uj7",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchTags": [
+    "embed"
+  ],
+  "source": "{{appsmith.store.frontend_components_url || 'https://white-pond-002f53503.3.azurestaticapps.net'}}/CostGraph#{ \"isLoading\": {{typeof cumCostAnalysis.data === 'undefined'}}, \"parse\": {\"costData\": \"{{cumCostAnalysis.data.map((d) => {\n\treturn {...d,cum_dsv_duration: d.cum_duration }}) }}\"}}",
+  "tags": [
+    "Display"
+  ],
+  "topRow": 4,
+  "type": "IFRAME_WIDGET",
+  "version": 1,
+  "widgetId": "hwk3imomud",
+  "widgetName": "Iframe3"
+}
