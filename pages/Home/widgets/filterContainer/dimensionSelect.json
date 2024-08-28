@@ -1,0 +1,77 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "bottomRowBeforeCollapse": 8,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( `rig_name`))(dimensionSelect.options, dimensionSelect.serverSideFiltering) }}",
+  "displayName": "Select",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultOptionValue"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onDropdownClose"
+    }
+  ],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.1a5defb3c19b4cac4a27829d1f979e4c.svg",
+  "isDeprecated": false,
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": false,
+  "key": "h1qnily4oi",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Dimension",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 17,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 37,
+  "mobileRightColumn": 57,
+  "mobileTopRow": 1,
+  "onDropdownClose": "{{filter.runFilters();}}",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 8,
+  "originalTopRow": 1,
+  "parentColumnSpace": 18.60595703125,
+  "parentId": "lressxgxkv",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 34,
+  "searchTags": [
+    "dropdown"
+  ],
+  "serverSideFiltering": false,
+  "sourceData": "[\n  {\n    \"label\": \"Area\",\n    \"value\": \"wlbmainarea\"\n  },\n  {\n    \"label\": \"Field\",\n    \"value\": \"field_name\"\n  },\n  {\n    \"label\": \"Rig\",\n    \"value\": \"rig_name\"\n  }\n]",
+  "topRow": 1,
+  "topRowBeforeCollapse": 1,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "hoz09jkamw",
+  "widgetName": "dimensionSelect"
+}

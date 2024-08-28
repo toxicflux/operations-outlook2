@@ -1,0 +1,2 @@
+SELECT t.portplanid, t.npd_wellbore, t.fromdate as start_date, t.taskname as task_name, t.operationphase FROM dwh.dimkabaltasks AS t
+WHERE t.rls_sensitivity <= {{filter.getRlsSensitivity()}} AND t.npd_wellbore =  {{this.params.npd_wellbore  || appsmith.URL.queryParams.npd_wellbore|| appsmith.store.selectedWellbore}} AND t.fromdate BETWEEN CURRENT_DATE AND CURRENT_DATE + 10 ORDER BY t.fromdate

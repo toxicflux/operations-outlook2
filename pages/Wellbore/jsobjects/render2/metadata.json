@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "66cf0d36fe2d9c733c8c472f_2e761171-30d4-47a5-9e67-d340b2571059",
+  "id": "Wellbore_render2",
+  "unpublishedCollection": {
+    "name": "render2",
+    "pageId": "Wellbore",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "progress",
+        "value": "0"
+      }
+    ]
+  }
+}

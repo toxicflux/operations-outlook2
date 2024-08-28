@@ -1,0 +1,1 @@
+SELECT summary_date as date, summary FROM input.operations_outlook_summaries WHERE npd_wellbore = {{this.params.npd_wellbore || appsmith.URL.queryParams.npd_wellbore|| appsmith.store.selectedWellbore}} AND LENGTH(summary) > 3 ORDER BY summary_date DESC LIMIT 1

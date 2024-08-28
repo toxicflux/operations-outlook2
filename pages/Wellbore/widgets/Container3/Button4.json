@@ -1,0 +1,68 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0px",
+  "bottomRow": 4,
+  "bottomRowBeforeCollapse": 4,
+  "boxShadow": "none",
+  "buttonColor": "#16a34a",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "displayName": "Button",
+  "dynamicBindingPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "hideCard": false,
+  "iconAlign": "left",
+  "iconName": "",
+  "iconSVG": "/static/media/icon.05d209fafeb13a8569e3b4e97069d9ee.svg",
+  "isDefaultClickDisabled": true,
+  "isDeprecated": false,
+  "isDisabled": "{{!Array.isArray(activities.getActivitiesLast10Days.data) && (Object.keys(tasks.getCurrentTask.data).length === 0 || Object.keys(activities.getActivitiesLast10Days.data).length === 0)}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "kwuiahjbvz",
+  "leftColumn": 41,
+  "minWidth": 120,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 46,
+  "mobileRightColumn": 62,
+  "mobileTopRow": 0,
+  "onClick": "{{activities.run();}}",
+  "originalBottomRow": 4,
+  "originalTopRow": 0,
+  "parentColumnSpace": 6.0068359375,
+  "parentId": "qqkradn2gd",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "searchTags": [
+    "click",
+    "submit"
+  ],
+  "tags": [
+    "Buttons"
+  ],
+  "text": "Show activities",
+  "topRow": 0,
+  "topRowBeforeCollapse": 0,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "2l80tyl2fz",
+  "widgetName": "Button4"
+}

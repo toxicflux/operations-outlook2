@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66cf0d36fe2d9c733c8c472f_23002e66-62f8-47be-b29e-d2635d9ec766",
+  "id": "Wellbore_filter",
+  "unpublishedCollection": {
+    "name": "filter",
+    "pageId": "Wellbore",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

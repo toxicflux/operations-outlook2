@@ -1,0 +1,47 @@
+{
+  "animateLoading": true,
+  "borderOpacity": 100,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "0",
+  "bottomRow": 40,
+  "boxShadow": "none",
+  "displayName": "Iframe",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "srcDoc"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.19c3fa45ba777cc28a04f390d5703b53.svg",
+  "isDeprecated": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "j91pro8dou",
+  "leftColumn": 0,
+  "mobileBottomRow": 133,
+  "mobileLeftColumn": 37,
+  "mobileRightColumn": 61,
+  "mobileTopRow": 101,
+  "originalBottomRow": 114,
+  "originalTopRow": 58,
+  "parentColumnSpace": 20.15625,
+  "parentId": "8ai85z1n6c",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "searchTags": [
+    "embed"
+  ],
+  "source": "https://www.example.com",
+  "srcDoc": "<!DOCTYPE html>\n<html>\n<head>\n<link href=\"https://fonts.googleapis.com/css?family=Nunito%20Sans\" rel=\"stylesheet\">\n<title>Our Funky HTML Page</title>\n<style>\n* {\n    font-family: \"Nunito Sans\";\n}\n/* width */\n::-webkit-scrollbar {\n  width: 10px;\n}\n\n/* Track */\n::-webkit-scrollbar-track {\n  background: #f1f1f1; \n}\n\n/* Handle */\n::-webkit-scrollbar-thumb {\n  background: #888; \n}\n\n/* Handle on hover */\n::-webkit-scrollbar-thumb:hover {\n  background: #555; \n}\n\nbody{\noverflow: hidden;\n}\n\n#scroll-container{\n\toverflow: auto;\n\theight: 400px;\n}\n\ntable{\n\tborder-collapse: separate;\n  border-spacing: 0 10px;\n  margin-top: -20px;\n\tmargin-bottom: 30px;\n}\n\ntable,tr,th,td,p {\n\tfont-family: \"Nunito Sans\";\n  font-size: 16px;\n}\n\nth{\n\ttext-align: center;\n}\ntd{\n\tpadding: 8px;\n\tline-height: 24px;\n  border-top: 1px solid #ccc;\n\tborder-bottom: 1px solid #ccc;\n\tborder-left: 1px solid #ccc;\n\tborder-right: 1px solid #ccc;\n}\n\ntr:first-child td{\nborder-top: 1px solid #ccc;\n}\n\n.header-row{\n\tdisplay: flex;\n\tmargin-bottom: 10px;\n}\n.header{\n    line-height: 1.2;\n    white-space: pre-wrap;\n    text-align: center;\n\t\tfont-family: \"Nunito Sans\";\n  color: rgb(35, 31, 32);\n    font-weight: bold;\n    font-size: 1rem;\n    word-break: break-word;\n}\n\n\n.ovm-oup_tooltip span {\n  left: 50%;\n  top: 100%;\n  transform: translate(-50%, 8px);\n}\n\n.ovm-oup_tooltip span {\n  left: 50%;\n  top: 100%;\n  transform: translate(-50%, 8px);\n}\n\n.ovm-oup_under_item {\n  position: relative;\n  align-items: center;\n}\n\n.ovm-oup_under_item {\n\n}\n\n.ovm-oup_tooltip {\n  position: relative;  \n  width: 14px;\n  margin-top: 2px;\n  height: 14px;\n\tpadding-left: 5px;\n\tcursor: help;\n}\n\n.ovm-oup_tooltip span {\n  position: absolute;\n  width: auto;\n  padding: 10px 12px;\n  color: rgb(250, 250, 250);\n  background: rgb(9, 7, 7);\n  width: 200px;\n  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 14px;\n  visibility: hidden;\n\t  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px, rgba(0, 0, 0, 0.1) 0px 2px \n\n}\n\n.ovm-oup_tooltip span:after {\n  content: '';\n  position: absolute;\n  bottom: 100%;\n  left: 50%;\n  margin-left: -8px;\n  width: 0;\n  height: 0;\n  border-bottom: 8px solid #000000;\n  border-right: 8px solid transparent;\n  border-left: 8px solid transparent;\n}\n\n.ovm-oup_tooltip:hover span {\n  visibility: visible;\n  margin: 0;\n  left: 50%;\n  z-index: 999;\n}\n  .outer-circle{\n     display: flex;\n     width: 100%;\n     height: 100%;\n     align-items: center;\n\t\t justify-content: center;\n   }\n\n   .infinte-loading-outer{\n      position: absolute;\n      height: 300px;\n      width: 100%;\n   }\n</style>\n</head>\n<body>\n\n\n\n<div class=\"header-row\" id=\"header\">\n<div class=\"header\">Last 7 Days Summary</div>\n<div class=\"ovm-oup_tooltip\" id=\"myTooltip\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" fill=\"none\" viewBox=\"0 0 20 20\"><path fill=\"currentColor\" fill-opacity=\"0.87\" d=\"M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM11 17H9V15H11V17ZM13.07 9.25L12.17 10.17C11.45 10.9 11 11.5 11 13H9V12.5C9 11.4 9.45 10.4 10.17 9.67L11.41 8.41C11.78 8.05 12 7.55 12 7C12 5.9 11.1 5 10 5C8.9 5 8 5.9 8 7H6C6 4.79 7.79 3 10 3C12.21 3 14 4.79 14 7C14 7.88 13.64 8.68 13.07 9.25Z\"></path></svg>\n  <div id=\"ovm-oup_under_item_1\" class=\"ovm-oup_under_item\">\n    <span>This summary is automatically generated based on the Daily Drilling Reports\nfrom the the past seven (7) days. \n</span>\n  </div>\n</div>\n\n</div>\n<div id=\"infinite-loading\" style=\"display: none\" class=\"infinte-loading-outer\">\n <div class=\"outer-circle\">\n <div class=\"inner-circle\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" style=\"margin: auto; background: rgb(255, 255, 255); display: block; shape-rendering: auto;\" width=\"150px\" height=\"200px\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"xMidYMid\">\n<circle cx=\"50\" cy=\"50\" r=\"10\" stroke=\"#ffffff\" stroke-width=\"2\" fill=\"none\"></circle>\n<circle cx=\"50\" cy=\"50\" r=\"10\" stroke=\"#16a34a\" stroke-width=\"2\" stroke-linecap=\"round\" fill=\"none\">\n  <animateTransform attributeName=\"transform\" type=\"rotate\" repeatCount=\"indefinite\" dur=\"1.4285714285714284s\" values=\"0 50 50;180 50 50;720 50 50\" keyTimes=\"0;0.5;1\"></animateTransform>\n  <animate attributeName=\"stroke-dasharray\" repeatCount=\"indefinite\" dur=\"1.4285714285714284s\" values=\"6.283185307179586 56.548667764616276;31.41592653589793 31.41592653589793;6.283185307179586 56.548667764616276\" keyTimes=\"0;0.5;1\"></animate>\n</circle>\n</svg>\n </div>\n</div>\n</div>\n<div id=\"scroll-container\" style=\"display: none\">\n<table>\n  <thead>\n    <tr>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n  </tbody>\n</table>\n<p id=\"no-data-description\"></p>\n</div>\n<script>\nvar enableTooltip = true;\n\nif(!enableTooltip){\ndocument.getElementById('header').style.display='none';\n}\n\nlet data = JSON.parse(\"{{summary.getSummary.data}}\");\n\nconst loading = {{typeof summary.getSummary.data === 'undefined' || !Array.isArray(summary.getSummary.data) || !summary.getSummary.data.every((x) => x.npd_wellbore === appsmith.store.selectedWellbore)}}\nconst tbody = document.querySelector('tbody');\n\nif(!loading){\ndocument.getElementById('infinite-loading').style=\"display : none\"\ndocument.getElementById('scroll-container').style=\"display: block\"\n}else{\ndocument.getElementById('infinite-loading').style=\"display : block\"\ndocument.getElementById('scroll-container').style=\"display: none\"\n}\n\nif(data.length === 0){\n\tconst table = document.querySelector('table');\n  table.style.visibility = \"hidden\";\n\n\tif(loading === false){\n\t const noData = document.getElementById(\"no-data-description\")\n  noData.style.visibility = \"visible\";\t\n\tnoData.innerText = 'No summary data available';\n\t}\n}else{\nconst table = document.querySelector('table');\n  table.style.visibility = \"visible\";\n\t\tconst noData = document.getElementById(\"no-data-description\")\n  noData.style.visibility = \"hidden\";\t\n\ndata.forEach(item => {\n\t\tconst tr = tbody.insertRow();\n  const date =  new Date(item[\"date\"]);\n\tdate.setDate(date.getDate() + 1);\n  const months = [\"January\",\"February\",\"March\",\"April\",\"May\",\"June\",\"July\",\"August\",\"September\",\"October\",\"November\",\"December\"];\n\tconst month = months[date.getMonth()];\n\n  const year = date.getFullYear();// May 25, 2023\n  const formattedDate = month + \" \" + date.getDate() + \", \" + date.getFullYear();\n\n  tr.insertCell().innerHTML =  \"<i>Created - \" + formattedDate + '</i><br/>' + item[\"summary\"];\n})\n\n}\n\n</script>\n</body>\n</html>",
+  "topRow": 0,
+  "type": "IFRAME_WIDGET",
+  "version": 1,
+  "widgetId": "q6890sjp9q",
+  "widgetName": "summaryFrame"
+}

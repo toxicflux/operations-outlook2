@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderOpacity": "0",
+  "borderRadius": "0px",
+  "borderWidth": "0",
+  "bottomRow": 64,
+  "boxShadow": "none",
+  "displayName": "Iframe",
+  "dynamicBindingPathList": [
+    {
+      "key": "srcDoc"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onMessageReceived"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onMessageReceived"
+    }
+  ],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.a84667dbdc548d14f7c83df551151550.svg",
+  "isDeprecated": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "as9e17t3vb",
+  "leftColumn": 0,
+  "mobileBottomRow": 31,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 0,
+  "onMessageReceived": "{{data.handleClick(activityScheduleFrame.message)}}",
+  "parentColumnSpace": 18.625,
+  "parentId": "rx6n4b41pj",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchTags": [
+    "embed"
+  ],
+  "source": "",
+  "srcDoc": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Parcel Sandbox</title>\n    <meta charset=\"UTF-8\" />\n\t\t<link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>\n  </head>\n\n  <script\n    src=\"https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js\"\n    integrity=\"sha512-XHDcSyqhOoO2ocB7sKOCJEkUjw/pQCJViP1ynpy+EGh/LggzrP6U/V3a++LQTnZT7sCQKeHRyWHfhN2afjXjCg==\"\n    crossorigin=\"anonymous\"\n    referrerpolicy=\"no-referrer\"\n  ></script>\n  <script\n    src=\"https://cdnjs.cloudflare.com/ajax/libs/vis-timeline/7.7.2/vis-timeline-graph2d.min.js\"\n    integrity=\"sha512-CNIa2enCaJJf7npRB7UuEn0SErfuhCc8S1YvZNRQKCyQmC/Pt7DGv7v87ctpw4Io/YZG4438IwcBJuET8gG6JA==\"\n    crossorigin=\"anonymous\"\n    referrerpolicy=\"no-referrer\"\n  ></script>\n\t    <script src=\n\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js\">\n    </script>\n\n  <link\n    rel=\"stylesheet\"\n    href=\"https://cdnjs.cloudflare.com/ajax/libs/vis-timeline/7.7.2/vis-timeline-graph2d.css\"\n    integrity=\"sha512-BCiAzaY2tkOA66v5MK0XJ0rEN2C6nz96Q+tyVLKQi+qHaSokLExqTvC9QQ4BVGedcYVlUrAABJ9RB94j1aYvJQ==\"\n    crossorigin=\"anonymous\"\n    referrerpolicy=\"no-referrer\"\n  />\n\n  <style>\n    body {\n      font-family: \"Nunito Sans\";\n    }\n\n    /* width */\n::-webkit-scrollbar {\n  width: 10px;\n}\n​\n/* Track */\n::-webkit-scrollbar-track {\n  background: #f1f1f1; \n}\n\n/* Handle */\n::-webkit-scrollbar-thumb {\n  background: #A4A7A9; \n}\n​\n/* Handle on hover */\n::-webkit-scrollbar-thumb:hover {\n  background: #C7C9C8; \n}\n\n    .vis-panel.vis-left .vis-label .vis-inner {\n      height: 40px;\n    }\n\n    .vis-inner {\n      display: flex !important;\n      align-items: center;\n     }\n    .vis-label {    \n\n    }\n\n    .vis-item-content{\n      display: flex !important;\n      align-items: center;\n      height: 100%;\n    }\n\n    .vis-item {\n      font-size: 14px;\n      height: 40px;\n      cursor: pointer;            \n      color: #fff;\n      background-color: #559CB5;\n      border-color: #559CB5;\n    }\n\n   .vis-item.vis-selected{\n      border-color: #003B74;\n      background-color: #559CB5;\n    }\n\n\t\t    .vis-tooltip{\n      background-color: #fafafa !important;          \n      font-family: \"Nunito Sans\";    \n      color: #000000;\n      border: 1px solid #C7C9C8 !important;\n    }\n\n\n    .vis-item.red {\n  color: white;\n  background-color: #3BA148;\n  border-color: #3BA148;\n}\n\n    button {\n      padding: 0.5rem;\n      margin-bottom: 0.5rem;\n      font-weight: bold;\n    }\n  </style>\n  <body>\n    <div id=\"timeline\"></div>\n\t <style>\n    .flex{\n      display: flex;\n      align-items: center;\n    }\n   .square {\n    height: 10px;\n    width: 10px;     \n  }  \n  .label{\n    padding-left: 5px;\n  }\n\n.square.not-active {\n    background-color: #559CB5;\n  }\n\n.square.active {\t\t\n    background-color: #3BA148;\n  }\n\n.container{\n  padding-top: 10px;\n  display: flex;\n\tjustify-content: space-evenly;\n}  \n\n</style>\n<div class=\"container\" id=\"legend\" style=\"visibility: hidden;\">\n    <div class=\"flex\">    \n      <div class=\"square not-active\"></div><div class=\"label\">Not active last 30 days</div>\n    </div>\n    <div class=\"flex\">\n     <div class=\"square active\"></div><div class=\"label\">Active last 30 days</div>\n    </div>\n</div>\n    <script>\n    const today = new Date();\n   const start = \"{{ appsmith.store && appsmith.store.h_start? moment(appsmith.store.h_start).startOf('day').format(): moment().subtract(3, 'month').startOf('day').format()}}\";\n\t\tconst end =   \"{{appsmith.store.h_end? moment(appsmith.store.h_end).endOf('day').format():  moment().endOf('day').format()}}\";\t\t\t\n\nconst options = {\n        locale: \"en\",\n        locales: {\n          en: {}\n        },\n\ttooltip: {\n        \tfollowMouse: false,\n          overflowMethod: 'flip',\n          template: function (item, element, data) {\n   \t\t\t\t\t\t \tlet html = \"<p><strong>\" +item.content + \"</strong></p>\";\n                html += \"<p>Start: \" + moment(item.start).format('L') + \"</p>\";\n                html += \"<p>End: \" + moment(item.end).format('L') + \"</p>\";\n    \t\t\t\t\t\treturn html;\n  \t\t\t\t}\n  \t\t\t},\n\t\t\t\tautoResize: true,\n        preferZoom: true,\n\t\t\t\tzoomable: false,\n\t\t\t\thorizontalScroll: false,\n        verticalScroll: true,\n        orientation: { axis: \"bottom\", item: \"top\" },\n        height: 580,\n        zoomMin: 1000 * 60 * 60,\n \t\t\t\tstart: start,\n        end: end,\n\t\t\t\t moment: function(date) {\n\tif(vis.moment(date).isDST()){\n    return vis.moment(date).utcOffset('+01:00');\n\t\t}else{\n\t\t return vis.moment(date).utcOffset('+02:00');\n\t\t}\n  }\n      };\n\n\n      const data = JSON.parse(\"{{data.process.data}}\")\n\t\t\tconst activeWellbores = JSON.parse(\"{{wellbores_active_last_14_days.data}}\")\t\t\t \nconst activeNpdWellbores = activeWellbores.map((d) => d.npd_wellbore); \nfunction visibleItems(x){\n  if((moment(x.start).startOf('day').isBefore(start) && moment(x.end).startOf('day').isBefore(end))){\n  \treturn false;\n  }\n\n    if((moment(x.start).endOf('day').isAfter(end) && moment(x.end).endOf('day').isAfter(end))){\n  \treturn false;\n  }\n\n  return true;\n}\n\nconst items = data.items\n\nconst groups = data.groups;\n      const timeline = new vis.Timeline(\n        document.getElementById(\"timeline\"),\n        data.items.map((x) => {\n\t     const isActiveWell = activeNpdWellbores.includes(x.npd_wellbore) && moment(x.end).isAfter(moment().subtract(30, 'd'));\n\treturn {\n  \t...x,\n    className: isActiveWell ? 'red': '',\n    isActiveWell\n  }\n}),\n        groups,\n        options\n      );\n\n timeline.on('click', function (props) {\n      \tconst item = data.items.find(item => item.id === props.item);\n        const group = data.groups.find(group => group.id === props.group);\n        const passedData = {\n        \tgroup,\n        \twellbore: item\n        };\nif(item && group){\nwindow.parent.postMessage({\"data\": passedData}, \"*\");\t  \t\t\t\n}\n  \t\t\tprops.event.preventDefault();\n\t\t});\n\t\t\n\t\t\t\ttimeline.on('changed', function (props) {\ndocument.getElementById('legend').style.visibility = \"visible\";\n\t\t})\n    </script>\n  </body>\n</html>\n",
+  "tags": [
+    "Display"
+  ],
+  "topRow": 0,
+  "type": "IFRAME_WIDGET",
+  "version": 1,
+  "widgetId": "iko2nklua8",
+  "widgetName": "activityScheduleFrame"
+}

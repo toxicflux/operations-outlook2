@@ -1,0 +1,40 @@
+{
+  "gitSyncId": "66cf0d36fe2d9c733c8c472f_945a4465-4a76-4681-b00f-f184e4badeff",
+  "id": "Wellbore_styleSettings",
+  "unpublishedCollection": {
+    "name": "styleSettings",
+    "pageId": "Wellbore",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "greenPrimary",
+        "value": "\"#84C661\""
+      },
+      {
+        "name": "whitePrimary",
+        "value": "\"#FFFFFF\""
+      },
+      {
+        "name": "yellowSecondary",
+        "value": "\"#FFD600\""
+      },
+      {
+        "name": "blackSecondary",
+        "value": "\"#000000\""
+      },
+      {
+        "name": "graySecondary",
+        "value": "\"#C7C9C8\""
+      },
+      {
+        "name": "darkGrayTertiary",
+        "value": "\"#A4A7A9\""
+      },
+      {
+        "name": "feedbackNegative",
+        "value": "\"#CD163F\""
+      }
+    ]
+  }
+}

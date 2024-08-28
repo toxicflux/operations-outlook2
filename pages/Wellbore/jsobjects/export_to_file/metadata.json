@@ -1,0 +1,28 @@
+{
+  "gitSyncId": "66cf0d36fe2d9c733c8c472f_be2aa813-b715-43bb-851d-3cc236f02283",
+  "id": "Wellbore_export_to_file",
+  "unpublishedCollection": {
+    "name": "export_to_file",
+    "pageId": "Wellbore",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "plannedColumns",
+        "value": "['name', 'planned_depth', 'start', 'summed_duration']"
+      },
+      {
+        "name": "actualColumns",
+        "value": "['activityend', 'activitystart', 'classification', 'com', 'depthend', 'depthstart', 'duration', 'npt_contractor', 'npt_service', 'remarks', 'runningmaxdepthend', 'totalduration']"
+      },
+      {
+        "name": "plannedColumnMap",
+        "value": "{\n  \"afe_hours\": \"AFE Hours\",\n  \"behind_hours\": \"Behind Hours\",\n  \"dsv_hours\": \"DSV Hours\",\n  \"ilt_hours\": \"ILT Hours\",\n  \"name\": \"Task name\",\n  \"npt_hours\": \"NPT Hours\",\n  \"planned_depth\": \"Planned Depth\",\n  \"start\": \"Start (iQx)\",\n  \"summed_duration\": \"Summed Duration\",\n  \"target_hours\": \"Target Hours\",\n  \"tft_hours\": \"TFT Hours\",\n  \"wow_hours\": \"WOW Hours\"\n}"
+      },
+      {
+        "name": "actualColumnMap",
+        "value": "{\n  \"activityend\": \"Activity End\",\n  \"activitystart\": \"Activity Start\",\n  \"classification\": \"NPT Classification\",\n  \"com\": \"Com\",\n  \"depthend\": \"Depth end\",\n  \"depthstart\": \"Depth start\",\n  \"duration\": \"Duration\",\n  \"npt_contractor\": \"NPT Contractor\",\n  \"npt_service\": \"NPT Service\",\n  \"remarks\": \"Remarks\",\n  \"runningmaxdepthend\": \"Actual Depth\",\n  \"totalduration\": \"Total Duration\"\n}"
+      }
+    ]
+  }
+}

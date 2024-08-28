@@ -1,0 +1,16 @@
+with cte1 as (SELECT DISTINCT * FROM dwh.dimtasks t
+	WHERE t.npd_wellbore =  {{this.params.npd_wellbore || appsmith.URL.queryParams.npd_wellbore|| appsmith.store.selectedWellbore}} AND t.name != 'Gap event' AND t.rls_sensitivity <= {{filter.getRlsSensitivity()}}),
+		cte2 as (SELECT *, sum(c.afe_hours/24) over (ORDER BY c.afe_hours_d_t) as running_duration FROM cte1 c ),
+			cte_first_entry as (select * from cte2 c2 order by c2.running_duration limit 1)
+,
+cte3 as (
+select *,0 as summed_duration from cte_first_entry
+union all
+SELECT *, running_duration as summed_duration from cte2)
+
+,
+cte4 as (
+select *, row_number() over (partition by summed_duration, npd_wellbore order by start desc) rn from cte3
+)
+
+select {{data_columns.selectedOptionValues.join(", ") }} FROM cte4 where rn=1

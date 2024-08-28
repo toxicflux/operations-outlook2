@@ -1,0 +1,28 @@
+with cte1 as (
+SELECT
+a.wvwbname as wellbore_name,
+w.wellbore as wellname,
+a.npd_wellbore_afe_parent as wellboreid,
+a.rigname as rigno,
+a.com,
+a.classification,
+activitystart as date_start,
+activityend,
+runningmaxdepthend as depthend,
+totalduration
+from dwh.factwvactivity a
+inner join dwh.dimwellbore w on w.npd_wellbore=a.npd_wellbore_afe_parent
+where a.npd_wellbore_afe_parent = {{this.params.npd_wellbore || appsmith.URL.queryParams.npd_wellbore|| appsmith.store.selectedWellbore}}
+and source='104'
+AND a.rls_sensitivity <= {{filter.getRlsSensitivity()}}
+),
+-- Adding a fictious 0 on x-axis
+cte_first_entry as (
+SELECT *, 0 as summed_duration from cte1
+order by totalduration limit 1
+)
+
+SELECT * from cte_first_entry
+UNION ALL
+SELECT *, totalduration as summed_duration from cte1
+order by summed_duration

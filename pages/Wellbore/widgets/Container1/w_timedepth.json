@@ -1,0 +1,44 @@
+{
+  "animateLoading": true,
+  "borderOpacity": 100,
+  "borderRadius": "0px",
+  "borderWidth": "0",
+  "bottomRow": 50,
+  "boxShadow": "none",
+  "displayName": "Iframe",
+  "dynamicBindingPathList": [
+    {
+      "key": "source"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.34169b6acebc8ace125dd1f638974aae.svg",
+  "isDeprecated": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "afcx2s3ao3",
+  "leftColumn": 0,
+  "mobileBottomRow": 55,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 12,
+  "mobileTopRow": 23,
+  "originalBottomRow": 68,
+  "originalTopRow": 5,
+  "parentColumnSpace": 22.53125,
+  "parentId": "9uh0zx4ung",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchTags": [
+    "embed"
+  ],
+  "source": "{{appsmith.store.frontend_components_url}}/TimeDepthCurve#{ \n\"isLoading\": {{typeof time_depth.data === 'undefined' || typeof planned_time_depth.data === 'undefined' || typeof factCostAnalysisComparative.data === 'undefined'}}, \"tableData\": {\n\t\"plannedDays\": {{typeof factCostAnalysisComparative.data !== 'undefined'? factCostAnalysisComparative.data[0].planneddays: null}},\n\t\"actualDays\": {{typeof factCostAnalysisComparative.data !== 'undefined' ?  factCostAnalysisComparative.data[0].actualdays: null}}\n}, \n\"parse\": { \"actualData\": \"{{time_depth.data? time_depth.data.map(p => ([p.summed_duration, p.depthend, p.classification, p.activityend, timeDepthData.getTask(p.com)])): []}}\", \"plannedData\":\"{{planned_time_depth.data? planned_time_depth.data.map(p => ([p.summed_duration, p.depthend])): []}}\"}}",
+  "srcDoc": "",
+  "topRow": 6,
+  "type": "IFRAME_WIDGET",
+  "version": 1,
+  "widgetId": "x0ztj1l8aw",
+  "widgetName": "w_timedepth"
+}

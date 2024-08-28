@@ -1,0 +1,7 @@
+
+	select 
+	*	
+	from dwh.dimcases
+	 where npd_wellbore = {{this.params.npd_wellbore || appsmith.URL.queryParams.npd_wellbore|| appsmith.store.selectedWellbore}}  
+	 and extract(day from now() - case_created_date) <= 14
+	 AND rls_sensitivity <= {{filter.getRlsSensitivity()}}

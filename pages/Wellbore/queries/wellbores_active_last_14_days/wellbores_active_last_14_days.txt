@@ -1,0 +1,62 @@
+WITH cte_wv AS (
+	SELECT 
+	npd_wellbore_afe_parent as npd_wellbore, 
+	MAX(activityStart) AS maxDate,
+	MAX(rls_sensitivity) as rls_sensitivity
+	FROM 
+	dwh.factwvactivity
+	WHERE 
+	activityStart >= CURRENT_DATE - {{appsmith.store.lastActiveDays ?? 30}}
+	AND activityStart <= CURRENT_DATE
+	GROUP BY 
+	npd_wellbore_afe_parent
+),
+cte1 AS (
+	SELECT 
+	w.wellbore, 
+	t.npd_wellbore, 
+	MAX(t.fromdate) AS maxDate,
+	1 AS unionId 
+	FROM 
+	dwh.dimkabaltasks t 
+	INNER JOIN 
+	dwh.dimwellbore w ON w.npd_wellbore = t.npd_wellbore
+	WHERE 
+	w.rls_sensitivity <= {{filter.getRlsSensitivity()}} AND
+	t.fromdate >= CURRENT_DATE - {{appsmith.store.lastActiveDays ?? 30}}
+	AND t.fromdate <= CURRENT_DATE AND t.complete is TRUE
+	GROUP BY 
+	w.wellbore, t.npd_wellbore
+
+	UNION ALL
+
+	SELECT 
+	w.wellbore, 
+	c.npd_wellbore, 
+	c.maxDate,
+	2 AS unionId 
+	FROM 
+	cte_wv c
+	INNER JOIN        
+	dwh.dimwellbore w ON w.npd_wellbore = c.npd_wellbore
+	WHERE 
+	c.rls_sensitivity <= {{filter.getRlsSensitivity()}}
+),
+cte2 AS (
+	SELECT 
+	wellbore, 
+	npd_wellbore
+	FROM 
+	cte1 
+	GROUP BY 
+	wellbore, npd_wellbore, maxDate 
+	ORDER BY 
+	maxDate DESC
+),
+cte3 AS (
+	SELECT * FROM cte2
+	UNION ALL
+	SELECT wellbore, npd_wellbore FROM dwh.dimwellbore where npd_wellbore = {{this.params.npd_wellbore|| appsmith.URL.queryParams.npd_wellbore|| appsmith.store.selectedWellbore}} AND rls_sensitivity <= {{filter.getRlsSensitivity()}}
+)
+
+SELECT DISTINCT wellbore, npd_wellbore FROM cte3

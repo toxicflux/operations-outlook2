@@ -13,8 +13,12 @@
   "icon": "arrow-down",
   "pages": [
     {
-      "id": "Page1",
+      "id": "Home",
       "isDefault": true
+    },
+    {
+      "id": "Wellbore",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {

@@ -1,0 +1,49 @@
+{
+  "animateLoading": true,
+  "borderOpacity": 100,
+  "borderRadius": "0px",
+  "borderWidth": "0",
+  "bottomRow": 26,
+  "bottomRowBeforeCollapse": 42,
+  "boxShadow": "none",
+  "displayName": "Iframe",
+  "dynamicBindingPathList": [
+    {
+      "key": "srcDoc"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.a84667dbdc548d14f7c83df551151550.svg",
+  "isDeprecated": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "77r5f72k3g",
+  "leftColumn": 0,
+  "mobileBottomRow": 36,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 4,
+  "originalBottomRow": 27,
+  "originalTopRow": 5,
+  "parentColumnSpace": 6.0068359375,
+  "parentId": "qqkradn2gd",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "searchTags": [
+    "embed"
+  ],
+  "source": "",
+  "srcDoc": "<!DOCTYPE html>\n<html>\n<head>\n<link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>\n<script src=\"\nhttps://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js\n\"></script>\n<style>\n\n* {\n    font-family: \"Nunito Sans\";\n\t\tfont-size: 13px;\n}\n\n.container{\n  width: 100%;\n}\n.flex{\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 2px;\n  margin-top: 2px;\n}\n.label{\n  padding-left: 2px;\n   font-size: 13px;\n}\n\n.crop{\n  width: 50%;\n  text-align: right;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.bp3-icon{\n    fill: #559CB5;\n}\n\n#list{\n    >li{\n        font-family: \"Nunito Sans\";\n    }\n  }\n  .no-activities{\n     font-family: \"Nunito Sans\";\n     font-size: 16px;\n  }\n  .bp3-icon-info-sign{\n    fill: #559cb5;\n  }\n\t.title{\n\t  padding-top: 5px;\n\t    font-family: \"Nunito Sans\";\n\t}\n\n  .value{\n    font-size: 13px;\n    text-align: right;\n  }\n\n</style>\n</head>\n<body>\n<div id=\"infinite-loading\"\nstyle=\"display: none;\"\nclass=\"infinte-loading-outer\">\n <div class=\"outer-circle\">\n <div class=\"inner-circle\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" style=\"margin: auto; background: rgb(255, 255, 255); display: block; shape-rendering: auto;\" width=\"150px\" height=\"150px\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"xMidYMid\">\n<circle cx=\"50\" cy=\"50\" r=\"10\" stroke=\"#ffffff\" stroke-width=\"2\" fill=\"none\"></circle>\n<circle cx=\"50\" cy=\"50\" r=\"10\" stroke=\"#16a34a\" stroke-width=\"2\" stroke-linecap=\"round\" fill=\"none\">\n  <animateTransform attributeName=\"transform\" type=\"rotate\" repeatCount=\"indefinite\" dur=\"1.4285714285714284s\" values=\"0 50 50;180 50 50;720 50 50\" keyTimes=\"0;0.5;1\"></animateTransform>\n  <animate attributeName=\"stroke-dasharray\" repeatCount=\"indefinite\" dur=\"1.4285714285714284s\" values=\"6.283185307179586 56.548667764616276;31.41592653589793 31.41592653589793;6.283185307179586 56.548667764616276\" keyTimes=\"0;0.5;1\"></animate>\n</circle>\n</svg>\n </div>\n</div>\n</div>\n<div id=\"main-container\">\n<div class=\"container\">\n  <div class=\"flex\">\n    <div class=\"label\">\n    <span class=\"bp3-icon bp3-icon-calendar\" icon=\"calendar\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13\" height=\"13\" data-icon=\"calendar\" viewBox=\"0 0 14 14\"><path fill-rule=\"nonzero\" d=\"M11 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .5.4 1 1 1Zm3-2h-1v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H6v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H1c-.6 0-1 .5-1 1v12c0 .6.4 1 1 1h13c.6 0 1-.4 1-1V2c0-.6-.5-1-1-1ZM5 13H2v-3h3v3Zm0-4H2V6h3v3Zm4 4H6v-3h3v3Zm0-4H6V6h3v3Zm4 4h-3v-3h3v3Zm0-4h-3V6h3v3ZM4 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1S3 .4 3 1v1c0 .5.4 1 1 1Z\"></path></svg></span>\n        <span class=\"label\">Start Date</span>\n    </div>\n    <div id=\"start_date\" class=\"value\">            \n    </div>\n  </div>\n\n  <div class=\"flex\">\n      <div class=\"label\">\n      <span class=\"bp3-icon bp3-icon-tag\" icon=\"tag\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13\" height=\"13\" data-icon=\"tag\" viewBox=\"0 0 16 16\"><path fill-rule=\"evenodd\" d=\"M1 3a2 2 0 0 1 2-2h4.584a2 2 0 0 1 1.414.586l5.413 5.412a2 2 0 0 1 0 2.829L9.827 14.41a2 2 0 0 1-2.829 0L1.586 8.998A2 2 0 0 1 1 7.584V3Zm3.487-.007a1.494 1.494 0 1 0 0 2.988 1.494 1.494 0 0 0 0-2.988Z\"></path></svg></span>\n      <span class=\"label\">Rig</span>  \n      </div>\n      <div id=\"rig\" class=\"value\">          \n      </div>\n  </div> \n  <div class=\"flex\">\n      <div class=\"label\">\n      <span class=\"bp3-icon bp3-icon-play\" icon=\"play\"><svg xmlns=\"http://www.w3.org/2000/svg\" xml:space=\"preserve\" viewBox=\"0 0 16 16\" data-icon=\"play\" height=\"13\" width=\"13\"><path fill-rule=\"evenodd\" d=\"M12 8c0-.35-.19-.64-.46-.82l.01-.02-6-4-.01.02A.969.969 0 0 0 5 3c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1 .21 0 .39-.08.54-.18l.01.02 6-4-.01-.02c.27-.18.46-.47.46-.82z\" clip-rule=\"evenodd\"></path></svg></span>\n       <span class=\"label\">Current Operation</span>\n      </div>\n      <div id=\"task_name\" class=\"value\">      \n      </div>\n  </div> \n\n  <div class=\"flex\">\n      <div class=\"label\">\n      <span class=\"bp3-icon bp3-icon-application\" icon=\"application\"><svg xmlns=\"http://www.w3.org/2000/svg\" xml:space=\"preserve\" viewBox=\"0 0 16 16\" data-icon=\"application\" height=\"14\" width=\"14\"><path fill-rule=\"evenodd\" d=\"M3.5 7h7c.28 0 .5-.22.5-.5s-.22-.5-.5-.5h-7c-.28 0-.5.22-.5.5s.22.5.5.5zM15 1H1c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zm-1 12H2V5h12v8zM3.5 9h4c.28 0 .5-.22.5-.5S7.78 8 7.5 8h-4c-.28 0-.5.22-.5.5s.22.5.5.5zm0 2h5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5h-5c-.28 0-.5.22-.5.5s.22.5.5.5z\" clip-rule=\"evenodd\"></path></svg></span>\n      <span class=\"label\">Current Activity</span>\n      </div>\n      <div id=\"activity_name\" class=\"value\">        \n      </div>\n  </div>    \n</div>\n\n\n<div class=\"title\" id=\"mainTitle\">\n\tOperation that start up to 10 days from now\n</div>\n\n<ul id=\"list\">\n\n</ul>\n<div id=\"placeholder\" style=\"display: none; justify-content: center; align-items: center; height: 0; padding-top: 5px; padding-left: 0px;\">\n\n <div style=\"display: flex; align-items: center;\">\n <div>\n   <span class=\"bp3-icon bp3-icon-info-sign\" icon=\"info-sign\"><svg xmlns=\"http://www.w3.org/2000/svg\" xml:space=\"preserve\" viewBox=\"0 0 16 16\" data-icon=\"info-sign\" height=\"13\" width=\"13\"><path fill-rule=\"evenodd\" d=\"M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z\" clip-rule=\"evenodd\"></path></svg></span>\n </div>\n <div style=\"margin-bottom: 4px;\">\n   <span class=\"no-activities\" style=\"padding-left: 8px; font-size: 13px;\">No planned activities for the next 10 days!</span>\n </div>\n </div>\n\n </div>\n</div>\n</div>\n\n<script>\n\nconst currentTask =  JSON.parse(\"{{tasks.getCurrentTask.data}}\");\n\nObject.keys(currentTask).forEach(key => {\nif(key === 'portplantaskid') return; \t\tdocument.getElementById(key).innerHTML = !currentTask[key]? \"\": currentTask[key];\n})\n\nconst data = JSON.parse(\"{{activities.getActivitiesLast10Days.data}}\");\n\nconst isLoading = !Array.isArray(data) && (Object.keys(currentTask).length === 0 || Object.keys(data).length === 0);\n\nif(!isLoading){\n  var ul = document.getElementById(\"list\");\n  data.forEach((item) => {  \t\n  \tvar li = document.createElement(\"li\");\n    const startDate = moment(item.start_date).format('DD/MM/YYYY')    \n  \tli.appendChild(document.createTextNode(startDate+ ' - ' + item.task_name));\n  \tul.appendChild(li);\n  })\n\n\t if(data.length === 0){\n  \tdocument.getElementById('list').style.display = 'none';\n    document.getElementById('mainTitle').style.display= \"none\";    \n    document.getElementById('placeholder').style.display= \"block\";    \n  }\n\n\tdocument.getElementById('infinite-loading').style.display = \"none\";\n\t\t\tdocument.getElementById('main-container').style.display = \"block\"\n\t}else{\t\tdocument.getElementById('infinite-loading').style.display = \"block\";\n\t\t\tdocument.getElementById('main-container').style.display = \"none\"\n\t}\n\n</script>\n</body>\n</html>",
+  "tags": [
+    "Display"
+  ],
+  "topRow": 4,
+  "topRowBeforeCollapse": 20,
+  "type": "IFRAME_WIDGET",
+  "version": 1,
+  "widgetId": "rnpe37la97",
+  "widgetName": "well_infoCopy"
+}

@@ -1,0 +1,9 @@
+SELECT
+{{data_columns.selectedOptionValues.join(",") }}
+from dwh.factwvactivity a
+inner join dwh.dimwellbore w on w.npd_wellbore=a.npd_wellbore_afe_parent
+where a.npd_wellbore_afe_parent = {{this.params.npd_wellbore || appsmith.URL.queryParams.npd_wellbore|| appsmith.store.selectedWellbore}}
+and source='104'
+AND a.rls_sensitivity <= {{filter.getRlsSensitivity()}}
+AND  activitystart >= TO_DATE('{{start_date.selectedDate}}', 'YYYY-MM-DD') AND activitystart  <= TO_DATE('{{end_date.selectedDate}}', 'YYYY-MM-DD')+1
+ORDER BY activitystart

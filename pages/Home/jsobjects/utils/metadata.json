@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "66cf0d36fe2d9c733c8c472f_5d82f4e2-fcb7-4734-ad82-ed4783c480aa",
+  "id": "Home_utils",
+  "unpublishedCollection": {
+    "name": "utils",
+    "pageId": "Home",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "filteredWellbores",
+        "value": "[9632, 9798, 9224]"
+      }
+    ]
+  }
+}

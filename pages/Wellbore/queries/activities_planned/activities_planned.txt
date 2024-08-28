@@ -1,0 +1,12 @@
+with cte1 as (
+	SELECT p.npd_wellbore, p.portplantaskid,  p.parentplantaskid, p.taskname as task_name, p.durplan as p10, p.durplanaux as p10_aux, CONCAT(UPPER(LEFT(p.operationphase,1)), LOWER(RIGHT(p.operationphase,LENGTH(p.operationphase)-1))) AS operation_status, 
+p.fromdate as start_date FROM dwh.dimkabalphases p 
+WHERE p.rls_sensitivity <= {{filter.getRlsSensitivity()}} AND p.npd_wellbore = {{this.params.npd_wellbore || appsmith.URL.queryParams.npd_wellbore|| appsmith.store.selectedWellbore}}
+and complete!='y'
+and operationphase != 'draft'
+union all 
+SELECT t.npd_wellbore, t.portplantaskid,  t.parentplantaskid, t.taskname as task_name, t.durplan as p10, t.durplanaux as p10_aux, CONCAT(UPPER(LEFT(t.operationphase,1)), LOWER(RIGHT(t.operationphase,LENGTH(t.operationphase)-1))) AS operation_status, 
+t.fromdate as start_date FROM dwh.dimkabaltasks t 
+WHERE t.rls_sensitivity <= {{filter.getRlsSensitivity()}} AND t.npd_wellbore = {{this.params.npd_wellbore || appsmith.store.selectedWellbore}}
+and complete!='y' and operationphase != 'draft')
+select * from cte1 order by start_date 

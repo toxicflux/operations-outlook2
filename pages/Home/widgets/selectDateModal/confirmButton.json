@@ -1,0 +1,61 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0px",
+  "bottomRow": 27,
+  "boxShadow": "none",
+  "buttonColor": "#16a34a",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "displayName": "Button",
+  "dynamicBindingPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.7beb9123fb53027d9d6b778cdfe4caed.svg",
+  "isDefaultClickDisabled": true,
+  "isDeprecated": false,
+  "isDisabled": "{{!dp_start.selectedDate || !dp_end.selectedDate}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "m7yduoykv8",
+  "leftColumn": 49,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "onClick": "{{datetime.selectCustomDate();}}",
+  "parentId": "vztq0rqets",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "searchTags": [
+    "click",
+    "submit"
+  ],
+  "text": "Select",
+  "topRow": 23,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "r94tnrec1f",
+  "widgetName": "confirmButton"
+}
