@@ -1,0 +1,14 @@
+INSERT INTO input.user_config
+  (user_id, config, updated_at, created_by, updated_by)
+VALUES
+  (
+    {{ this.params.user }},
+    CAST({{ this.params.config }} as json),
+     now() ,
+		{{ this.params.user}},
+		{{ this.params.user}}
+  ) on CONFLICT (user_id) DO 
+	UPDATE SET 
+	config = EXCLUDED.config || {{ this.params.config }}, 
+	updated_by ={{ this.params.user }},
+	updated_at = now()

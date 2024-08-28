@@ -1,0 +1,27 @@
+with cte1 as( 
+select npd_wellbore, idwell, activitystart, activityend, 
+case when classification = 'P' then duration end as days_p, 
+case when classification = 'WOW' then duration end as days_wow, 
+case when classification = 'NPT' then duration end as days_npt, 
+duration, rigname as rig_name,cutoffmonth
+from  
+dwh.factwvactivity 
+where 
+activitystart>=TO_DATE('{{datetime.getStartDate()}}', 'YYYY-MM-DD') AND activityend<= TO_DATE('{{datetime.getEndDate()}}', 'YYYY-MM-DD') 
+ORDER BY activitystart ) , 
+cte2 as ( 
+select rig_name,npd_wellbore,  cutoffmonth,
+--min(activitystart) as mindate, 
+--max(activityend) as maxdate, 
+sum(days_wow*24) as wowhours, 
+sum(days_npt*24) as npthours, 
+sum(duration*24) as totalhours, 
+SUM(COALESCE(days_wow*24,0)) + SUM(COALESCE(days_npt*24,0)) as npttotalhours 
+from cte1 group by npd_wellbore, rig_name, cutoffmonth ) 
+
+select CONCAT(SUBSTRING(cutoffmonth::text, 1,4), '-', SUBSTRING(cutoffmonth::text, 5, 6)) as cutoffmonth, sum(wowhours/24) as wow_days, sum(npthours/24) as npt_days, sum(totalhours/24) as total_days, sum(npttotalhours/24) as npttotal_days, sum(totalhours/24) - sum(npttotalhours/24) as productive_days, count(cutoffmonth) number_of_rigs
+from cte2 c 
+left join dwh.dimwellbore w on c.npd_wellbore=w.npd_wellbore 
+
+WHERE c.totalhours > 0 AND ({{typeof appsmith.store.wellbores === 'undefined'}} is TRUE OR c.npd_wellbore = ANY ({{appsmith.store.wellbores}})) AND w.drillingoperator = 'Vår Energi ASA'
+GROUP BY cutoffmonth 

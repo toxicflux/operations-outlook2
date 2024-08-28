@@ -1,0 +1,61 @@
+{
+  "accentColor": "#16a34a",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "bottomRow": 6,
+  "boxShadow": "none",
+  "defaultSwitchState": "{{appsmith.store.mrp_days_percentage}}",
+  "displayName": "Switch",
+  "dynamicBindingPathList": [
+    {
+      "key": "defaultSwitchState"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "defaultSwitchState"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.afbd826fee9d09b12c5cde30a8c6fe62.svg",
+  "isDeprecated": false,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "xqh9r3vzx4",
+  "label": "% / Days",
+  "labelPosition": "Left",
+  "leftColumn": 57,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 34,
+  "mobileRightColumn": 46,
+  "mobileTopRow": 0,
+  "onChange": "{{filter.saveFilters('mrp_days_percentage', days_percentage_toggle.isSwitchedOn);\nstoreValue('mrp_days_percentage', days_percentage_toggle.isSwitchedOn);}}",
+  "originalBottomRow": 14,
+  "originalTopRow": 2,
+  "parentColumnSpace": 18.671875,
+  "parentId": "khgzjkk8ar",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "searchTags": [
+    "boolean"
+  ],
+  "tags": [
+    "Toggles"
+  ],
+  "topRow": 2,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "djk7cix1c8",
+  "widgetName": "days_percentage_toggle"
+}

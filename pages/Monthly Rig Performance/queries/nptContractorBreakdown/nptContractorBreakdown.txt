@@ -1,0 +1,11 @@
+with cte as( 
+SELECT 
+CASE 
+						 WHEN npt_contractor is NULL OR npt_contractor = 'VAR ENERGI' THEN 'Vår Energi'
+						 ELSE initcap(npt_contractor) END as npt_contractor,
+						 CASE 
+						 WHEN npt_contractor is NULL OR npt_contractor = 'VAR ENERGI' THEN CONCAT('Vår Energi', ' ', CASE WHEN classification = 'P' THEN 'Production' ELSE classification END)
+						 ELSE CONCAT(initcap(npt_contractor), ' ', CASE WHEN classification = 'P' THEN ' Production' ELSE classification END) END as name, CASE WHEN classification = 'P' THEN 'Productive' ELSE classification END as classification, sum(duration*24) as value FROM dwh.factwvactivity WHERE rls_sensitivity <= {{main.getRlsSensitivity()}} AND activitystart>=TO_DATE('{{datetime.getStartDate()}}', 'YYYY-MM-DD') AND activityend<= TO_DATE('{{datetime.getEndDate()}}', 'YYYY-MM-DD') AND classification = 'NPT' AND npt_contractor != 'VAR ENERGI' AND  ({{typeof appsmith.store.wellbores === 'undefined'}} is TRUE OR npd_wellbore = ANY ({{appsmith.store.wellbores}})) GROUP BY classification, npt_contractor)
+						 
+						 
+SELECT sum(value) as value, npt_contractor, name, classification FROM cte GROUP BY npt_contractor, name, classification

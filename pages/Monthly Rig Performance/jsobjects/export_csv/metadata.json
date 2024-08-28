@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66cf0d36fe2d9c733c8c472f_b2f4fbe5-dfd8-4f5a-8c1d-0a2a51b118ce",
+  "id": "Monthly Rig Performance_export_csv",
+  "unpublishedCollection": {
+    "name": "export_csv",
+    "pageId": "Monthly Rig Performance",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "animateLoading": true,
+  "borderOpacity": 100,
+  "borderRadius": "0px",
+  "borderWidth": "0",
+  "bottomRow": 43,
+  "boxShadow": "none",
+  "displayName": "Iframe",
+  "dynamicBindingPathList": [
+    {
+      "key": "source"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.a84667dbdc548d14f7c83df551151550.svg",
+  "isDeprecated": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "weyv51d5nf",
+  "leftColumn": 0,
+  "mobileBottomRow": 32,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 15,
+  "mobileTopRow": 0,
+  "parentColumnSpace": 18.671875,
+  "parentId": "sjxqqoktq1",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchTags": [
+    "embed"
+  ],
+  "source": "{{appsmith.store.frontend_components_url}}/MonthlyRigPerformanceChart#{\n\"mode\": \"{{days_percentage_toggle.isSwitchedOn? \"percentage\": \"days\"}}\", \"isLoading\": {{typeof main.getData.data === 'undefined'}}, \"parse\": {\"data\": \"{{typeof main.getData.data === 'undefined' ? []: main.getData.data}}\"}}",
+  "tags": [
+    "Display"
+  ],
+  "topRow": 0,
+  "type": "IFRAME_WIDGET",
+  "version": 1,
+  "widgetId": "5eww7n0zwy",
+  "widgetName": "monthly_rig_performance_iframe"
+}

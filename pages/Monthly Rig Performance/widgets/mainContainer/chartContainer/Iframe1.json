@@ -1,0 +1,47 @@
+{
+  "animateLoading": true,
+  "borderOpacity": 100,
+  "borderRadius": "0px",
+  "borderWidth": "0",
+  "bottomRow": 113,
+  "boxShadow": "none",
+  "displayName": "Iframe",
+  "dynamicBindingPathList": [
+    {
+      "key": "source"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.a84667dbdc548d14f7c83df551151550.svg",
+  "isDeprecated": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "1jfliznveq",
+  "leftColumn": 0,
+  "mobileBottomRow": 32,
+  "mobileLeftColumn": 41,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 0,
+  "originalBottomRow": 113,
+  "originalTopRow": 48,
+  "parentColumnSpace": 18.671875,
+  "parentId": "sjxqqoktq1",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchTags": [
+    "embed"
+  ],
+  "source": "{{appsmith.store.frontend_components_url}}/{{contractor_breakdown.isSwitchedOn? 'NptPieBreakdownChart': 'NptPieChart'}}#{ \"isLoading\": {{typeof NPT_monthly_cutoff.data === 'undefined'}}, \"height\": 600, \"radius\": 55, \"title\": \"NPT Overview\", \"parse\": {\"serieData\": \"{{contractor_breakdown.isSwitchedOn? nptContractorBreakdown.data.map((d) => {\n\treturn {\n\t\t...d,\n\t\tgroupId: d.classification,\n\t\tchildGroupId: d.npt_contractor\n\t}\n}):  main.getNptMonthlyRigPerformance.data}}\"}}",
+  "tags": [
+    "Display"
+  ],
+  "topRow": 48,
+  "type": "IFRAME_WIDGET",
+  "version": 1,
+  "widgetId": "812c5b9ums",
+  "widgetName": "Iframe1"
+}
